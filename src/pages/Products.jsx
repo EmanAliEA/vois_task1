@@ -7,7 +7,7 @@ function Products() {
   if (isLoading) return <Loader />;
   return (
     <div className="flex flex-col bg-gray-800 ">
-      <ul className="gap-4 flex-wrap flex px-7 py-10 justify-center">
+      <ul className="gap-3 lg:gap-4 flex-wrap flex px-7 py-10 justify-center">
         {!isLoading &&
           data.map((product) => (
             <ProductItem product={product} key={product.name} />

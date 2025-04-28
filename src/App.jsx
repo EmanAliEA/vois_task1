@@ -6,7 +6,7 @@ import AppLayout from "./pages/AppLayout";
 import Cart from "./pages/Cart";
 import { CartProvider } from "./context/CartContext";
 import CheckOut from "./pages/CheckOut";
-import ErrorPage from "./components/ErrorPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   const [data, setData] = useState([]);
