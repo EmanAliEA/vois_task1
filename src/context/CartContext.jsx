@@ -15,7 +15,7 @@ function cartReducer(state, action) {
         items: [...state.items, { ...action.payload, quantity: 1 }],
         total: state.total + action.payload.price,
       };
-    case "removeFromCart":
+    case "removeFromCart": {
       const updatedItems = state.items.filter(
         (item) => item.id !== action.payload.id
       );
@@ -27,6 +27,7 @@ function cartReducer(state, action) {
           0
         ), // Calculate total based on updated items
       };
+    }
     case "increaseQuantity":
       return {
         ...state,
