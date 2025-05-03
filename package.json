@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"vite\"",
+    "server": "json-server --watch src/data/data.json --port 8000",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "axios": "^1.9.0",
     "express": "^5.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

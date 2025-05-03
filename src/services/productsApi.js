@@ -4,7 +4,8 @@
 // const URL = "https://dummyjson.com/recipes?limit=10&skip=10&select=name,image";
 
 // const LOCAL_STORAGE_KEY = "cartItems";
-const URL = "//localhost:8000/products";
+// const URL = "http://localhost:8000/products";
+const URL = "/data.json";
 export async function getProducts() {
   try {
     const response = await fetch(URL);
@@ -12,7 +13,8 @@ export async function getProducts() {
     if (!response.ok) {
       throw new Error("Failed to fetch products");
     }
-    return data.pizza;
+    console.log(data);
+    return data.products.pizza;
   } catch (error) {
     console.error("Error fetching products:", error.message);
   }

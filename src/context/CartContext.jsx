@@ -16,12 +16,17 @@ function cartReducer(state, action) {
         total: state.total + action.payload.price,
       };
     case "removeFromCart":
+      const updatedItems = state.items.filter(
+        (item) => item.id !== action.payload.id
+      );
       return {
         ...state,
-        items: state.items.filter((item) => item.id !== action.payload.id),
-        total: state.total - action.payload.price,
+        items: updatedItems,
+        total: updatedItems.reduce(
+          (acc, cur) => acc + cur.price * cur.quantity,
+          0
+        ), // Calculate total based on updated items
       };
-
     case "increaseQuantity":
       return {
         ...state,
