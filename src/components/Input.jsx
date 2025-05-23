@@ -1,7 +1,7 @@
 function Input({ text, id, type = "text", style = "" }) {
   return (
     <div className={`flex flex-col md:gap-1  ${style}`}>
-      <label className="text-[.8rem]" htmlFor={id}>
+      <label className="text-xl font-semibold" htmlFor={id}>
         {text}
       </label>
       <input
